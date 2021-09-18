@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="16dp"
-        app:layout_constraintGuide_percent="0.66" />
+        app:layout_constraintGuide_percent="0.8" />
     />
 
     <androidx.constraintlayout.widget.Guideline
@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="16dp"
-        app:layout_constraintGuide_percent="0.33" />
+        app:layout_constraintGuide_percent="0.2" />
 
     <LinearLayout
         android:id="@+id/CurrentScoreLayout"
@@ -147,84 +147,154 @@
             app:srcCompat="@drawable/scrabble_scoresheet" />
     </ScrollView>
 
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Scrabble"
+        app:layout_constraintEnd_toStartOf="@+id/RightBoardGuideline"
+        app:layout_constraintStart_toStartOf="@+id/LeftBoardGuideline" />
+
     <ImageView
         android:id="@+id/imageView14"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toStartOf="@+id/RightBoardGuideline"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/LeftBoardGuideline"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleTextView"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/ic_launcher_background" />
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/RightBoardGuideline"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView14">
+        app:layout_constraintStart_toStartOf="@+id/imageView14">
 
         <Button
             android:id="@+id/ResetButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Reset" />
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:backgroundTint="#8E0B0B"
+            android:text="🔄" />
 
         <Button
             android:id="@+id/Tile7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Button" />
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:backgroundTint="#BC9216"
+            android:text="A" />
 
         <Button
             android:id="@+id/Tile6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Button" />
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:backgroundTint="#BC9216"
+            android:text="B" />
 
         <Button
             android:id="@+id/Tile5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Button" />
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:backgroundTint="#BC9216"
+            android:text="C" />
 
         <Button
             android:id="@+id/Tile4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Button" />
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:backgroundTint="#BC9216"
+            android:text="D" />
 
         <Button
             android:id="@+id/Tile3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Button" />
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:backgroundTint="#BC9216"
+            android:text="E" />
 
         <Button
             android:id="@+id/Tile2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Button" />
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:backgroundTint="#BC9216"
+            android:text="F" />
 
         <Button
             android:id="@+id/Tile1"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:backgroundTint="#BC9216"
+            android:text="G" />
+
+        <Button
+            android:id="@+id/SubmitButton"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:backgroundTint="#17A512"
+            android:text="✔" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/TimerLinearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/RightBoardGuideline"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/TimerTextView"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:text="Timer" />
+
+        <EditText
+            android:id="@+id/TimerText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="time" />
+
     </LinearLayout>
 
     <Button
-        android:id="@+id/SubmitButton"
+        android:id="@+id/RulesButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Rules"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/RightBoardGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/TimerLinearLayout" />
+
+    <ImageView
+        android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Submit"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/RightBoardGuideline"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/ResetButton" /><![CDATA[
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/RightBoardGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/RulesButton"
+        app:srcCompat="@drawable/scrabble_bag" /><![CDATA[
+
+
+
+
 
 
 
@@ -235,6 +305,8 @@
 
 
     />
+
+
 
 
 
