@@ -40,81 +40,87 @@
             android:text="Current Score"
             android:textAlignment="center" />
 
-        <LinearLayout
-            android:id="@+id/CurrentScoreLinearLayout"
+        <ScrollView
+            android:id="@+id/currentScoreScrollView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="match_parent">
 
             <LinearLayout
-                android:id="@+id/Player1CurrentScoreLinearLayout"
+                android:id="@+id/CurrentScoreLinearLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
-                <EditText
-                    android:id="@+id/player1CurrentScore"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:id="@+id/Player1CurrentScoreLinearLayout"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:hint="Player 1 Score"
-                    android:inputType="number" />
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/player1CurrentScore"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="Player 1 Score"
+                        android:inputType="number" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/Player2CurrentScoreLinearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/Player2CurrentScore"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="Player 2 Score"
+                        android:inputType="number" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/Player3CurrentScoreLinearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/Player3CurrentScore"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="Player 3 Score"
+                        android:inputType="number" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/Player4CurrentScoreLinearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/Player4CurrentScore"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="Player 4 Score"
+                        android:inputType="number" />
+
+                </LinearLayout>
 
             </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/Player2CurrentScoreLinearLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <EditText
-                    android:id="@+id/Player2CurrentScore"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:hint="Player 2 Score"
-                    android:inputType="number" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/Player3CurrentScoreLinearLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <EditText
-                    android:id="@+id/Player3CurrentScore"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:hint="Player 3 Score"
-                    android:inputType="number" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/Player4CurrentScoreLinearLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <EditText
-                    android:id="@+id/Player4CurrentScore"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:hint="Player 4 Score"
-                    android:inputType="number" />
-
-            </LinearLayout>
-
-        </LinearLayout>
+        </ScrollView>
 
     </LinearLayout>
 
@@ -165,7 +171,7 @@
         app:layout_constraintStart_toStartOf="@+id/LeftBoardGuideline"
         app:layout_constraintTop_toBottomOf="@+id/titleTextView"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/ic_launcher_background" />
+        app:srcCompat="@drawable/scrabble_board" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -283,14 +289,37 @@
         app:layout_constraintStart_toStartOf="@+id/RightBoardGuideline"
         app:layout_constraintTop_toBottomOf="@+id/TimerLinearLayout" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
+    <ImageButton
+        android:id="@+id/scrabbleBagButton"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/RightBoardGuideline"
         app:layout_constraintTop_toBottomOf="@+id/RulesButton"
-        app:srcCompat="@drawable/scrabble_bag" /><![CDATA[
+        app:srcCompat="@drawable/scrabble_bag" />
+
+    <ScrollView
+        android:id="@+id/letterDistributionScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/scrabbleBagButton"
+        app:layout_constraintStart_toStartOf="@+id/RightBoardGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/scrabbleBagButton">
+
+        <ImageView
+            android:id="@+id/letterDistributionImageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/letterdistribution" />
+    </ScrollView>
+    <![CDATA[
+
+
+
+
 
 
 
@@ -305,6 +334,8 @@
 
 
     />
+
+
 
 
 
